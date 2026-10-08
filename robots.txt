@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whghhgfgfg232.github.io/asin39ka-blog-AI/sitemap.xml
