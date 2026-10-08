@@ -8,7 +8,6 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
@@ -16,9 +15,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  base: "/asin39ka-blog-AI/",  // ← ДОБАВЬ ЭТУ СТРОКУ
+  base: "/asin39ka-blog-AI/",
   build: {
     target: "es2020",
+    minify: "esbuild",
     assetsInlineLimit: 100000000,
     chunkSizeWarningLimit: 100000000,
     rollupOptions: {
