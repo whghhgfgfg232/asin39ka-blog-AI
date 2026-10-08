@@ -1,5 +1,5 @@
-import { POSTS, PROJECTS } from "../data";
-import type { LaunchFn } from "../App";
+import { POSTS, PROJECTS } from "@/data";
+import type { LaunchFn } from "@/App";
 
 export default function Blog({ launch }: { launch: LaunchFn }) {
   return (

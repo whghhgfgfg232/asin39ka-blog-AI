@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import BanHammer from "../scenes/BanHammer";
+import BanHammer from "@/components/BanHammer";
 import {
   CASES,
   KEPT,
@@ -9,7 +9,7 @@ import {
   type CaseType,
   type ModCase,
   type TopicKey,
-} from "../banData";
+} from "@/banData";
 
 const TYPE_STYLE: Record<CaseType, { color: string; label: string; verb: string }> = {
   warn: { color: "#facc15", label: "WARNING", verb: "warn" },

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GeometryMall from "../scenes/GeometryMall";
-import type { LaunchFn } from "../App";
+import GeometryMall from "@/components/GeometryMall";
+import type { LaunchFn } from "@/App";
 
 export default function MallSection({ launch }: { launch: LaunchFn }) {
   const [collected, setCollected] = useState<number[]>([]);

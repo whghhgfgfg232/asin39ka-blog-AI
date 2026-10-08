@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { createCanvas } from "./canvasUtils";
+import { createCanvas } from "@/canvasUtils";
 
 const CYCLE = 3.2; // seconds per slam
 

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import LaunchScene from "../scenes/LaunchScene";
-import { LAUNCH_BOOT, LAUNCH_FACTS, type Project } from "../data";
+import LaunchScene from "@/components/LaunchScene";
+import { LAUNCH_BOOT, LAUNCH_FACTS, type Project } from "@/data";
 
 const DURATION = 6000;
 

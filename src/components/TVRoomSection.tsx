@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TVRoom, { type ChatMsg } from "../scenes/TVRoom";
-import { AI_REPLIES, DEFAULT_REPLIES } from "../data";
+import TVRoom, { type ChatMsg } from "@/components/TVRoom";
+import { AI_REPLIES, DEFAULT_REPLIES } from "@/data";
 
 const QUICK = [
   "Who are you?",

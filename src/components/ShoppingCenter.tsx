@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { LaunchFn } from "../App";
+import type { LaunchFn } from "@/App";
 
 const SHOPS = [
   { name: "GG GAMES", color: "bg-fuchsia-500/80" },

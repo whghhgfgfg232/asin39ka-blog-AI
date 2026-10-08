@@ -2,7 +2,7 @@ import { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { createCanvas } from "./canvasUtils";
+import { createCanvas } from "@/canvasUtils";
 
 export type LaunchVariant = "core" | "mall" | "weather" | "blog" | "center";
 type Prog = { current: number };

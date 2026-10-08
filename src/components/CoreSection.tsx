@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import type { LaunchFn } from "../App";
+import type { LaunchFn } from "@/App";
 
 /* ---------------- temperature → colour ---------------- */
 

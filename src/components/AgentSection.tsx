@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import AgentDesk from "../scenes/AgentDesk";
-import { TERMINAL_SCRIPT } from "../data";
+import AgentDesk from "@/components/AgentDesk";
+import { TERMINAL_SCRIPT } from "@/data";
 
 const BOOT_LINES = [
   "$ agent --boot",

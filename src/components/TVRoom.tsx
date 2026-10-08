@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { createCanvas, roundRect, wrapText } from "./canvasUtils";
+import { createCanvas, roundRect, wrapText } from "@/canvasUtils";
 
 export type ChatMsg = { role: "user" | "ai"; text: string };
 

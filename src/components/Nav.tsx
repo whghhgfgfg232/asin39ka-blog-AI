@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NAV_ITEMS } from "../data";
+import { NAV_ITEMS } from "@/data";
 
 export default function Nav() {
   const [progress, setProgress] = useState(0);

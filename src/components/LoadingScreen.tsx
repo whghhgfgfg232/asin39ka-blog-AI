@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FACTS } from "../data";
+import { FACTS } from "@/data";
 
 type Stage = "intro" | "loading";
 

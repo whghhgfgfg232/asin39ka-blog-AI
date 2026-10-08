@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { LaunchFn } from "../App";
+import type { LaunchFn } from "@/App";
 
 type Weather = {
   name: string;

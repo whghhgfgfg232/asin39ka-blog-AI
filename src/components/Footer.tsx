@@ -1,5 +1,5 @@
-import { PROJECTS } from "../data";
-import type { LaunchFn } from "../App";
+import { PROJECTS } from "@/data";
+import type { LaunchFn } from "@/App";
 
 const FACTS = [
   { k: "USING AI SINCE", v: "June 2025" },
