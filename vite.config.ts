@@ -16,4 +16,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  base: "/asin39ka-blog-AI/",  // ← ДОБАВЬ ЭТУ СТРОКУ
+  build: {
+    target: "es2020",
+    assetsInlineLimit: 100000000,
+    chunkSizeWarningLimit: 100000000,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 });
