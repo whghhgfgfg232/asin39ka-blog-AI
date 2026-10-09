@@ -29,3 +29,12 @@
   },
   "include": ["src", "vite.config.ts"]
 }
+{
+  "name": "react-vite-tailwind",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "echo '\\n🌌 ASIN39K — built by someone who was banned from a Discord and decided to build their own universe instead.\\n📦 Original: https://github.com/whghhgfgfg232/asin39ka-blog-AI\\n⭐ Star the original if this inspired you!\\n'"
+  }
+}
