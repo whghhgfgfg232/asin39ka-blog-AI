@@ -238,3 +238,24 @@ Built with 💙 in a 3D world that exists because of a Discord ban.
 ⬆ Back to top
 
 </div> ```
+## 🌟 Built by Others
+
+Inspired by this project? Built your own version? 
+
+**Open a PR to add yourself to this list!**
+
+| Who | Project | Story |
+|-----|---------|-------|
+| ASIN39K | [whghhgfgfg232.github.io/asin39ka-blog-AI](https://whghhgfgfg232.github.io/asin39ka-blog-AI/) | Banned from Arena Discord for mixing up channels |
+| _your name here_ | _your link_ | _your story_ |
+
+---
+
+## 📢 If you fork this
+
+Please:
+1. ⭐ Star the [original repository](https://github.com/whghhgfgfg232/asin39ka-blog-AI)
+2. 📝 Keep a link to the original in your README
+3. 🎨 Add yourself to the "Built by Others" list above
+
+Let's build a community of people who create their own spaces.
