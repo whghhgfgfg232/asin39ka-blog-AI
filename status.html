@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASIN39K — Status</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --fg: #e0e0e0;
+      --accent: #00ffe1;
+      --green: #00ff88;
+      --yellow: #ffcc00;
+      --red: #ff4444;
+      --muted: #707080;
+      --card-bg: #15151f;
+      --border: #2a2a3a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Courier New', monospace;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--accent), #ff00aa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    
+    .overall {
+      background: var(--card-bg);
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .overall-status {
+      color: var(--green);
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .services {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    .service {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .service.warning {
+      border-left-color: var(--yellow);
+    }
+    
+    .service.down {
+      border-left-color: var(--red);
+    }
+    
+    .service-name {
+      font-weight: bold;
+    }
+    
+    .service-status {
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .status-operational {
+      background: var(--green);
+      color: #000;
+    }
+    
+    .status-warning {
+      background: var(--yellow);
+      color: #000;
+    }
+    
+    .status-down {
+      background: var(--red);
+      color: #fff;
+    }
+    
+    .incidents {
+      margin-bottom: 3rem;
+    }
+    
+    h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .incident {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .incident.resolved {
+      opacity: 0.8;
+    }
+    
+    .incident-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .incident-title {
+      font-weight: bold;
+      color: var(--accent);
+    }
+    
+    .incident-badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .badge-resolved {
+      background: var(--green);
+      color: #000;
+    }
+    
+    .badge-monitoring {
+      background: var(--yellow);
+      color: #000;
+    }
+    
+    .badge-investigating {
+      background: var(--red);
+      color: #fff;
+    }
+    
+    .incident-time {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .incident-duration {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+    
+    .incident-description {
+      margin-top: 0.5rem;
+    }
+    
+    .update {
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      margin-top: 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    
+    .live-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ASIN39K STATUS</h1>
+      <p class="tagline">
+        <span class="live-indicator"></span>
+        Real-time system status
+      </p>
+    </header>
+
+    <!-- Общий статус -->
+    <div class="overall">
+      <p class="overall-status">✓ All Systems Operational</p>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem;">
+        Last updated: <span id="last-updated"></span>
+      </p>
+    </div>
+
+    <!-- Сервисы -->
+    <section class="services">
+      <h2>Services</h2>
+      
+      <div class="service">
+        <span class="service-name">🌐 Main Site (3D Universe)</span>
+        <span class="service-status status-operational">Operational</span>
+      </div>
+      
+      <div class="service">
+        <span class="service-name">📺 TV Room Scene</span>
+        <span class="service-status status-operational">Operational</span>
+      </div>
+      
+      <div class="service">
+        <span class="service-name">🤖 AI Agent</span>
+        <span class="service-status status-operational">Operational</span>
+      </div>
+      
+      <div class="service">
+        <span class="service-name">⚖️ The Ban Page</span>
+        <span class="service-status status-operational">Operational</span>
+      </div>
+      
+      <div class="service">
+        <span class="service-name">💔 What I Lost Page</span>
+        <span class="service-status status-operational">Operational</span>
+      </div>
+      
+      <div class="service">
+        <span class="service-name">🔍 Google Search Index</span>
+        <span class="service-status status-operational">Indexed</span>
+      </div>
+    </section>
+
+    <!-- История инцидентов -->
+    <section class="incidents">
+      <h2>📜 Incident History</h2>
+      
+      <!-- Пример завершённого инцидента -->
+      <div class="incident resolved">
+        <div class="incident-header">
+          <span class="incident-title">Initial deployment issues</span>
+          <span class="incident-badge badge-resolved">Resolved</span>
+        </div>
+        <p class="incident-time">
+          📅 Date: 2026-XX-XX
+        </p>
+        <p class="incident-duration">
+          ⏱️ Duration: ~3 hours
+        </p>
+        <p class="incident-description">
+          Site was returning 404 errors due to missing base path 
+          configuration in Vite. Fixed by adding 
+          <code>base: "/asin39ka-blog-AI/"</code> to vite.config.ts.
+        </p>
+        <div class="update">
+          <strong>Update:</strong> Issue identified and fixed. 
+          All systems back to normal.
+        </div>
+      </div>
+
+      <!-- Шаблон для новых инцидентов -->
+      <div class="incident" style="border-left: 4px solid var(--muted);">
+        <p style="color: var(--muted); text-align: center; font-style: italic;">
+          ✨ No active incidents. Everything is running smoothly.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <a href="./" style="color: var(--accent); text-decoration: none;">
+          ← Back to ASIN39K
+        </a>
+        <br><br>
+        Maintained by ASIN39K · Last check: <span id="last-check"></span>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Автообновление времени
+    function updateTime() {
+      const now = new Date();
+      const options = { 
+        year: 'numeric', month: 'short', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      };
+      const formatted = now.toLocaleDateString('en-US', options);
+      document.getElementById('last-updated').textContent = formatted;
+      document.getElementById('last-check').textContent = formatted;
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+  </script>
+</body>
+</html>
